@@ -21,7 +21,9 @@ function funcao1()
 
   try {
     funcao2();
-  } catch (RuntimeException | DivisionByZeroError $erroOuExcecao) {
+  } catch (Throwable $erroOuExcecao) {
+  // } catch (Exception $erroOuExcecao) {
+  // } catch (RuntimeException | DivisionByZeroError $erroOuExcecao) {
     // echo "Na função 1, eu resolvi o problema da função 2" . PHP_EOL;
     echo $erroOuExcecao->getMessage() . PHP_EOL;
     echo $erroOuExcecao->getLine() . PHP_EOL;
@@ -32,7 +34,11 @@ function funcao1()
     //   1,
     //   $erroOuExcecao
     // );
-  }
+  } /* catch (Error $erro) {
+    echo $erro->getMessage() . PHP_EOL;
+    echo $erro->getLine() . PHP_EOL;
+    echo $erro->getTraceAsString() . PHP_EOL;
+  } */ 
 
 
   funcao2();
