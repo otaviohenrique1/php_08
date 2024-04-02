@@ -2,6 +2,8 @@
 
 namespace Alura\Banco\Modelo;
 
+use InvalidArgumentException;
+
 // final => nao pode ser extendida
 final class CPF
 {
@@ -15,8 +17,9 @@ final class CPF
       ]
     ]);
     if ($numero === false) {
-      echo "Cpf inválido";
-      exit();
+      throw new InvalidArgumentException("Cpf inválido");
+      // echo "Cpf inválido";
+      // exit();
     }
     $this->numero = $numero;
   }
